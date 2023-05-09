@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,6 +37,16 @@ class CityServiceTest {
         assertNotNull(city.getId(),"ERROR Insert City ");
         log.info("City CREATED : {}", city);
         log.trace("<<<<<<<Create City END  >>>>>>>");
+    }
+
+    @Test
+    void getcapital() {
+        //List<City> capitals = cityDao.findAllCapitals();
+        service.readAll().forEach(
+                c->log.trace("{aaaaaaa}",c.capital)
+
+
+        );
     }
 
     @Test

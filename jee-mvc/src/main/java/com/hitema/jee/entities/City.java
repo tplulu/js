@@ -23,6 +23,7 @@ public class City {
 
     @Column(name = "last_update")
     private LocalDateTime lastUpdate;
+    public Boolean capital;
 
     public Long getId() {
         return id;
@@ -63,13 +64,9 @@ public class City {
         sb.append(", city='").append(city).append('\'');
         sb.append(", country=").append(country);
         sb.append(", lastUpdate=").append(lastUpdate);
+        sb.append(", capital=").append(capital);
         sb.append('}');
         return sb.toString();
     }
 
-    public String searchCities(String city) {
-        List<City> cities = city.findByName(name);
-        model.addAttribute("cities", cities);
-        return "search";
-    }
 }

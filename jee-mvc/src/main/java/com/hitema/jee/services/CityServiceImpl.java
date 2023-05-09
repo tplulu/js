@@ -46,4 +46,10 @@ public class CityServiceImpl implements CityService{
     public List<City> findByName(String name) {
         return repository.findByName(name);
     }
+
+    public List<City> findAllCapitals() {
+        return repository.findByIsCapitalTrue();
+    }
+
+
 }
